@@ -1,4 +1,4 @@
 class Child < ApplicationRecord
-  enum gender: { male: 0, female: 1 }
-  enum relationship: { son: 0, daughter: 1 }
+  enum gender: { M: 0, F: 1 }
+  enum relationship: { Son: 0, Daughter: 1 }
 end

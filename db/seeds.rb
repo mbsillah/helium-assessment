@@ -89,7 +89,7 @@ taylor = Child.create(
 julie = Child.create(
     employee_id: linda.id,
     birth_date: Date.new(1996,11,19),
-    first_name: "James",
+    first_name: "Julie",
     last_name: "Franko",
     gender: 1,
     relationship: 1

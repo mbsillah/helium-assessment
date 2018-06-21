@@ -10,6 +10,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @children = Employee.find(params[:id]).children
   end
 
   # GET /employees/new
@@ -69,6 +70,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:emp_no, :birth_date, :first_name, :last_name, :gender, :title)
+      params.require(:employee).permit(:birth_date, :first_name, :last_name, :gender, :title)
     end
 end

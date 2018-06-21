@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Emp no:</strong>
-  <%= @employee.emp_no %>
+  <strong>ID:</strong>
+  <%= @employee.id %>
 </p>
 
 <p>
@@ -29,6 +29,44 @@
   <strong>Title:</strong>
   <%= @employee.title %>
 </p>
+
+<h4>Children</h4>
+
+<% if @children.length == 0 %>
+  
+ <p>This employee does not have children</p>
+
+<% else %>
+
+  <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Gender</th>
+      <th>Birth date</th>
+      <th>Relationship</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @children.each do |child| %>
+      <tr>
+        <td><%= child.id %></td>
+        <td><%= child.first_name %></td>
+        <td><%= child.last_name %></td>
+        <td><%= child.gender %></td>
+        <td><%= child.birth_date %></td>
+        <td><%= child.relationship %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
